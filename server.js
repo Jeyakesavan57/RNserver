@@ -96,20 +96,49 @@ io.on('connection', (socket) => {
       console.log(msg); 
      
       io.emit("chat message" ,msg);
+      
    });
 
    parser.on('data', (data) => {
     console.log(data.toString());
   
     val=data.toString();
+    
+app.get('/api/data', (req, res) => {
+  res.json(val);
+});
     io.emit("chat message" ,val);
     collection.insertMany({name:val})
+
+
+
+
   });
   
 
 
   });
 
+
+
+  
+
   server.listen(port1, () => {console.log("server running on port:"+port1)});
 
 
+
+// Sample data with Api call
+const data = [
+  { id: 1, name: 'Item 1' },
+  { id: 2, name: 'Item 2' },
+  { id: 3, name: 'Item 3' },
+];
+
+// app.get('/api/data', (req, res) => {
+//   res.json(data);
+// });
+
+const port3 = 5000;
+app.listen(port3, () => {
+  console.log(`Server running on http://localhost:${port3}`);
+});
