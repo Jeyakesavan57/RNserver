@@ -2,7 +2,7 @@
 const express= require("express");
 const mongoose =require("mongoose");
 const app=express();
-const uri="mongodb+srv://jeyakesavanzuppa:jeyakesavanzuppa@cluster0.3lsv3ti.mongodb.net/?retryWrites=true&w=majority"
+const uri="mongodb+srv://jeyakesavan:jeyakesavan@cluster0.3lsv3ti.mongodb.net/?retryWrites=true&w=majority"
 const port1 =3000;
 const http = require('http');
 const server = http.createServer(app);
@@ -51,7 +51,7 @@ app.listen(8000,()=>
 
 const { SerialPort } = require('serialport');
 const { ByteLengthParser } = require('@serialport/parser-byte-length');
-const parser = new ByteLengthParser({ length:12 });
+const parser = new ByteLengthParser({ length:21});
 const config = {
   path: 'COM24',
   baudRate: 9600,
